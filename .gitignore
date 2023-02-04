@@ -1,0 +1,4 @@
+# random files we dont need
+*.log
+*.prt
+*.vmx
