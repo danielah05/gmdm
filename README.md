@@ -17,4 +17,5 @@ We are also planning on adding toggleable enhances and new maps to the gamemode 
 danielah05 (me!) - Creating the Port  
 Wirelex.exe - Helping with fixing Lua problems  
 Mira - Creating the Logo and Icon  
+Demez - Uploading it to the Workshop  
 Garry Newman - Creating the original Garry's Deathmatch
