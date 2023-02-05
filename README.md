@@ -19,3 +19,6 @@ Wirelex.exe - Helping with fixing Lua problems
 Mira - Creating the Logo and Icon  
 Demez - Uploading it to the Workshop  
 Garry Newman - Creating the original Garry's Deathmatch
+
+### Steam Workshop
+https://steamcommunity.com/sharedfiles/filedetails/?id=2928568029
