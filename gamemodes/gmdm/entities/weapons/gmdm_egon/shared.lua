@@ -20,8 +20,11 @@ local sndPowerDown		= Sound("Town.d1_town_02a_spindown")
 local sndNoAmmo			= Sound("Weapon_Shotgun.Empty")
 
 function SWEP:Initialize()
-
-	self:SetWeaponHoldType( "smg" )
+	if (cvars.Bool("gmdm_wmodels_holdfix", true)) then
+		self:SetHoldType( "physgun" )
+	else
+		self:SetHoldType( "smg" )
+	end
 	
 end
 

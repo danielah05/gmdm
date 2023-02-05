@@ -23,8 +23,11 @@ function SWEP:SetNeedsPump( b )
 end
 
 function SWEP:Initialize()
-
-	self:SetWeaponHoldType( "smg" )
+	if (cvars.Bool("gmdm_wmodels_holdfix", true)) then
+		self:SetHoldType( "shotgun" )
+	else
+		self:SetHoldType( "smg" )
+	end
 	self:SetNeedsPump( false )
 	
 	self.LastTime = 0;
