@@ -5,9 +5,14 @@ SWEP.Slot				= 2
 SWEP.SlotPos			= 0
 SWEP.DrawAmmo			= true
 SWEP.DrawCrosshair		= true
-SWEP.ViewModel			= "models/weapons/c_smg1.mdl"
+if (cvars.Bool("gmdm_cmodels", true)) then
+	SWEP.ViewModel			= "models/weapons/c_smg1.mdl"
+	SWEP.UseHands			= true
+else
+	SWEP.ViewModel			= "models/weapons/v_smg1.mdl"
+	SWEP.UseHands			= false
+end
 SWEP.WorldModel			= "models/weapons/w_smg1.mdl"
-SWEP.UseHands			= true
 
 function SWEP:Initialize()
 

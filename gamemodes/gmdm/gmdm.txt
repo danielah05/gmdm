@@ -1,8 +1,20 @@
 "gmdm"
 {
-	"base"		"base"
-	"title"		"Garry's Deathmatch"
-	"maps"		"^gmdm_"
-	"category"	"pvp"
+	"base"			"base"
+	"title"			"Garry's Deathmatch"
+	"maps"			"^gmdm_"
+	"category"		"pvp"
 	"menusystem"	"1"
+	
+	"settings"
+	{
+		1
+		{
+			"name"		"gmdm_cmodels"
+			"text"		"Use C Models"
+			"help"		"Enable C Models for Weapons to use custom Hands"
+			"type"		"CheckBox"
+			"default"	"1"
+		}
+	}
 }

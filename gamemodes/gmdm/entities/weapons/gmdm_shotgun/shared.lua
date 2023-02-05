@@ -5,9 +5,14 @@ SWEP.Slot				= 2
 SWEP.SlotPos			= 1
 SWEP.DrawAmmo			= true
 SWEP.DrawCrosshair		= true
-SWEP.ViewModel			= "models/weapons/c_shotgun.mdl"
+if (cvars.Bool("gmdm_cmodels", true)) then
+	SWEP.ViewModel			= "models/weapons/c_shotgun.mdl"
+	SWEP.UseHands			= true
+else
+	SWEP.ViewModel			= "models/weapons/v_shotgun.mdl"
+	SWEP.UseHands			= false
+end
 SWEP.WorldModel			= "models/weapons/w_shotgun.mdl"
-SWEP.UseHands			= true
 
 function SWEP:NeedsPump()
 	return self.Weapon:GetNWBool( "NeedsPump" )

@@ -5,9 +5,14 @@ SWEP.Slot				= 4
 SWEP.SlotPos			= 0
 SWEP.DrawAmmo			= true
 SWEP.DrawCrosshair		= true
-SWEP.ViewModel			= "models/weapons/c_superphyscannon.mdl"
+if (cvars.Bool("gmdm_cmodels", true)) then
+	SWEP.ViewModel			= "models/weapons/c_superphyscannon.mdl"
+	SWEP.UseHands			= true
+else
+	SWEP.ViewModel			= "models/weapons/v_superphyscannon.mdl"
+	SWEP.UseHands			= false
+end
 SWEP.WorldModel			= "models/weapons/w_physics.mdl"
-SWEP.UseHands			= true
 
 local sndPowerUp		= Sound("Airboat.FireGunHeavy")
 local sndAttackLoop 	= Sound("Airboat_fan_idle")
