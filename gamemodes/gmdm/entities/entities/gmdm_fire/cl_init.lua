@@ -30,7 +30,7 @@ function ENT:Draw()
 
 	if (self.Fires == nil) then return end
 	
-	local DieTime		= self.Entity:GetNetworkedFloat( 0 )
+	local DieTime		= self.Entity:GetNWFloat( "dietime" )
 	
 	if ( self.DownTrace == nil ) then
 	

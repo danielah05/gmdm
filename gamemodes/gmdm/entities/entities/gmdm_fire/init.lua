@@ -37,7 +37,7 @@ function ENT:Initialize()
 	local Time = math.Rand( 9, 10 )
 	timer.Simple( Time, function() self:RemoveMe() end )
 	
-	self:SetNetworkedFloat( 0, CurTime() + Time )
+	self:SetNWFloat( "dietime", CurTime() + Time )
 	
 	NUM_FIRES = NUM_FIRES + 1
 	

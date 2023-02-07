@@ -17,12 +17,12 @@ end
 
 // Player should be on fire for the next x seconds
 function meta:SetFireTime( add )
-	self:SetNetworkedFloat( 0, CurTime() + add )
+	self:SetNWFloat( "firetime", CurTime() + add )
 end
 
 // Returns the amount of seconds left being on fire
 function meta:GetFireTime( add )
-	return (self:GetNetworkedFloat( 0 ) - CurTime() )
+	return (self:GetNWFloat( "firetime" ) - CurTime() )
 end
 
 function meta:Recoil(pitch, yaw)

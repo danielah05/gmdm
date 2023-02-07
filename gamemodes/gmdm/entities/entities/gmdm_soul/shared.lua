@@ -16,14 +16,14 @@ PickupTypes[1] = { name="gmdm_flamethrower",
 /*---------------------------------------------------------
 ---------------------------------------------------------*/
 function ENT:SetActiveTime( t )
-	self.Entity:SetNetworkedFloat( 0, t )
+	self.Entity:SetNWFloat( "time", t )
 end
 
 
 /*---------------------------------------------------------
 ---------------------------------------------------------*/
 function ENT:GetActiveTime()
-	return self.Entity:GetNetworkedFloat( 0 )
+	return self.Entity:GetNWFloat( "time" )
 end
 
 
@@ -32,13 +32,13 @@ function ENT:SetPickupType( name )
 	for k, v in pairs(PickupTypes) do
 	
 		if ( v.name == name ) then
-			self.Entity:SetNetworkedInt( 0, k )
+			self.Entity:SetNWInt( "pickup", k )
 		return end
 	
 	end
 	
 	Msg("Warning: gm_pickup - unhandled pickup type "..name.."\n")
-	self.Entity:SetNetworkedInt( 0, 0 )
+	self.Entity:SetNWInt( "pickup", 0 )
 
 end
 
@@ -48,7 +48,7 @@ function ENT:GetPickupName()
 end
 
 function ENT:GetPickupType()
-	return self.Entity:GetNetworkedInt( 0 )
+	return self.Entity:GetNWInt( "pickup" )
 end
 
 function ENT:GetNiceName()

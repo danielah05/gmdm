@@ -21,12 +21,12 @@ end
 /*---------------------------------------------------------
 ---------------------------------------------------------*/
 function ENT:SetActiveTime( at )
-	self.Entity:SetNetworkedFloat( 0, at )
+	self.Entity:SetNWFloat( "activetime", at )
 end
 
 
 /*---------------------------------------------------------
 ---------------------------------------------------------*/
 function ENT:GetActiveTime()
-	return self.Entity:GetNetworkedFloat( 0 )
+	return self.Entity:GetNWFloat( "activetime" )
 end
