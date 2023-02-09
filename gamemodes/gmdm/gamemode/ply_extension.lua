@@ -76,9 +76,10 @@ function meta:HeadShot()
 end
 
 function meta:BodyShot()
-
-	self:GetTable().HeadShotRoll = math.Clamp( self:GetTable().HeadShotRoll + 10, 0, 45 )
-	self:GetTable().HeadShotStart = CurTime()
+	if (!cvars.Bool("gmdm_view_lessmotion", true)) then
+		self:GetTable().HeadShotRoll = math.Clamp( self:GetTable().HeadShotRoll + 10, 0, 45 )
+		self:GetTable().HeadShotStart = CurTime()
+	end
 	
 	Sharpen = 2
 	ColorModify[ "$pp_colour_addr" ] = math.Clamp( ColorModify[ "$pp_colour_addr" ] + 0.5, 0, 1 )
@@ -209,7 +210,11 @@ function meta:DoOnFire()
 	if (CLIENT && self:GetVar( "LastFire", 0 ) < CurTime()) then
 	
 		if (self == LocalPlayer()) then
-			self:Recoil( math.Rand( -3, 3 ), math.Rand( -15, 15 ) )
+			if (!cvars.Bool("gmdm_view_lessmotion", true)) then
+				self:Recoil( math.Rand( -3, 3 ), math.Rand( -15, 15 ) )
+			else
+				self:Recoil( math.Rand( -1, 1 ), math.Rand( -3, 3 ) )
+			end
 		end
 	
 		self:SetVar( "LastFire", CurTime() + 0.02 )

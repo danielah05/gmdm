@@ -34,25 +34,27 @@ function GM:CalcView( ply, origin, angle, fov )
 	local vel = ply:GetVelocity()
 	local ang = ply:EyeAngles()
 	
-	VelSmooth = VelSmooth * 0.9 + vel:Length() * 0.1
-	
-	WalkTimer = WalkTimer + VelSmooth * FrameTime() * 0.05
-	
-	// Roll on strafe
-	angle.roll = angle.roll + ang:Right():DotProduct( vel ) * 0.01
-	
+	if (!cvars.Bool("gmdm_view_lessmotion", true)) then
+		VelSmooth = VelSmooth * 0.9 + vel:Length() * 0.1
+		
+		WalkTimer = WalkTimer + VelSmooth * FrameTime() * 0.05
+		
+		// Roll on strafe
+		angle.roll = angle.roll + ang:Right():DotProduct( vel ) * 0.01
+		
 
-	// Roll on steps
-	if ( ply:GetGroundEntity() != NULL ) then	
-	
-		angle.roll = angle.roll + math.sin( WalkTimer ) * VelSmooth * 0.001
-		angle.pitch = angle.pitch + math.sin( WalkTimer * 0.5 ) * VelSmooth * 0.001
+		// Roll on steps
+		if ( ply:GetGroundEntity() != NULL ) then	
 		
+			angle.roll = angle.roll + math.sin( WalkTimer ) * VelSmooth * 0.001
+			angle.pitch = angle.pitch + math.sin( WalkTimer * 0.5 ) * VelSmooth * 0.001
+			
+		end
+		
+		angle = angle + ply:HeadshotAngles()
+		
+		return self.BaseClass:CalcView( ply, origin, angle, fov )
 	end
-	
-	angle = angle + ply:HeadshotAngles()
-		
-	return self.BaseClass:CalcView( ply, origin, angle, fov )
 
 end
 
