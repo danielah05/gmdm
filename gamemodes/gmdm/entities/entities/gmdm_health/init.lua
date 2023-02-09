@@ -48,11 +48,11 @@ function ENT:Touch( entity )
 
 	if ( self:GetActiveTime() > CurTime() ) then return end
 	if (!entity:IsPlayer()) then return end
-	if (Entity(1):Health() >= Entity(1):GetMaxHealth()) then return end
+	if (entity:Health() >= entity:GetMaxHealth()) then return end
 	
-	Entity(1):SetHealth(Entity(1):Health() + self:GetPickupType())
-	if (Entity(1):Health() >= Entity(1):GetMaxHealth()) then
-		Entity(1):SetHealth(Entity(1):GetMaxHealth())
+	entity:SetHealth(entity:Health() + self:GetPickupType())
+	if (entity:Health() >= entity:GetMaxHealth()) then
+		entity:SetHealth(entity:GetMaxHealth())
 	end
 	
 	local effectdata = EffectData()
