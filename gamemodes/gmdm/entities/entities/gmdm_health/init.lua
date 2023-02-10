@@ -50,6 +50,8 @@ function ENT:Touch( entity )
 	if (!entity:IsPlayer()) then return end
 	if (entity:Health() >= entity:GetMaxHealth()) then return end
 	
+	entity:GMDM_Extinguish() -- remove fire when picking up health
+	
 	entity:SetHealth(entity:Health() + self:GetPickupType())
 	if (entity:Health() >= entity:GetMaxHealth()) then
 		entity:SetHealth(entity:GetMaxHealth())
