@@ -29,8 +29,8 @@
 		3
 		{
 			"name"		"gmdm_view_lessmotion"
-			"text"		"add description here"
-			"help"		"add help here"
+			"text"		"Less Screen Motions"
+			"help"		"Turns down the Screen Motions for people with Motion Sickness"
 			"type"		"CheckBox"
 			"default"	"0"
 		}
