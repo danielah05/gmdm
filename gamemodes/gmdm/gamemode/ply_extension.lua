@@ -118,6 +118,11 @@ function meta:Think( )
 	// We don't use HL2's default on fire stuff, we do it ourselves because
 	// we're so awesome.
 	self:DoOnFire()
+	
+	// Extinguish the Player if we touch water!
+	if (self:WaterLevel() > 0) then
+		self:GMDM_Extinguish()
+	end
 
 end
 
