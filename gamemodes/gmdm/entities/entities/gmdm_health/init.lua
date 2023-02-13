@@ -60,7 +60,7 @@ function ENT:Touch( entity )
 	local effectdata = EffectData()
 		effectdata:SetOrigin( self.Entity:GetPos() )
 		effectdata:SetEntity( entity )
-	util.Effect( "pickup", effectdata, true, true ) // Allow override, Ignore prediction
+	util.Effect( "pickup_health", effectdata, true, true ) // Allow override, Ignore prediction
 	
 	local RespawnTime = 5
 	
