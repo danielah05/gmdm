@@ -1,0 +1,12 @@
+@include "base.fgd"
+@include "halflife2.fgd"
+
+@PointClass base(Targetname) studio("models/gmdm_pickup.mdl") = gmdm_pickup : "Entity that gives Player a selected weapon"
+[
+	item(string)		: "Weapon Item"		: "gmdm_smg"	: "ID of the Item (entities/gmdm_pickup/shared.lua)"
+]
+
+@PointClass base(Targetname) studio("models/gmdm_health.mdl") = gmdm_health : "Entity that gives the Player Health"
+[
+	health(integer)		: "Health Amount"	: 10	: "Amount of Health to give the Player on pickup"
+]
