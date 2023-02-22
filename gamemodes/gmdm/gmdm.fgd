@@ -10,3 +10,8 @@
 [
 	health(integer)		: "Health Amount"	: 10	: "Amount of Health to give the Player on pickup"
 ]
+
+@PointClass base(Targetname) studio("models/gmdm_jumppad.mdl") = gmdm_jumppad : "Entity that gives the Player Velocity"
+[
+	velocity(integer)		: "Velocity Amount"	: 249	: "Amount of Velocity to give the Player on touch (smallest number that works is 249)"
+]

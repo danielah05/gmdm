@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/gmdm_jumppad/jumppad_metalbase"
+	"$surfaceprop"  "metal"
+}
