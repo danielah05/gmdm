@@ -10,6 +10,7 @@ function SWEP:GMDMShootBullet( dmg, snd, pitch, yaw, numbul, cone )
 
 	self.Weapon:EmitSound( snd )
 	self:GMDMShootBulletEx( dmg, numbul, cone, 1 )
+	if not IsFirstTimePredicted() then return end
 	self.Owner:Recoil( pitch, yaw )
 	
 	// Make gunsmoke
